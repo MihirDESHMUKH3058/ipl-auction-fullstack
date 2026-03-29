@@ -170,6 +170,22 @@ export default function AnonymousAuction({ players, auctionRecords, setAuctionRe
   const handleConfirmWinner = async (winningTeam, amount) => {
     if (!activePlayer) return;
     const priceString = `₹${amount},00,000`;
+    const finalPriceLakhs = Math.round(amount);
+    const PURSE_LIMIT_LAKHS = 12000; // 120 Cr
+
+    // Calculate current spending for the selected team
+    let currentSpentLakhs = 0;
+    Object.values(auctionRecords).forEach(record => {
+      if (record.team === winningTeam) {
+        const numStr = record.final_price.replace(/[^0-9]/g, '');
+        currentSpentLakhs += (parseInt(numStr, 10) / 100000);
+      }
+    });
+
+    if (currentSpentLakhs + finalPriceLakhs > PURSE_LIMIT_LAKHS) {
+      alert(`❌ Purse limit reached! You cannot buy any more players. (₹120 Cr exhausted)`);
+      return;
+    }
     
     console.log(`Confirming win: Player ${activePlayer.id} to ${winningTeam} for ${priceString}`);
 
@@ -198,7 +214,7 @@ export default function AnonymousAuction({ players, auctionRecords, setAuctionRe
     const amountLakhs = Math.round(amountCr * 100);
 
     if (amountLakhs > userRemainingPurse) {
-      alert(`❌ Over Budget! Your remaining purse is ₹${userRemainingPurse >= 100 ? (userRemainingPurse/100).toFixed(2) + ' Cr' : userRemainingPurse + ' Lakhs'}.`);
+      alert(`❌ Purse limit reached! You cannot buy any more players. (₹120 Cr exhausted)`);
       return;
     }
 

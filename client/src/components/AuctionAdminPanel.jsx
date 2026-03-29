@@ -20,6 +20,22 @@ export default function AuctionAdminPanel({ players, auctionRecords, setAuctionR
     if (!selectedPlayerId || !selectedTeam || !finalPrice) return;
 
     const priceString = `₹${finalPrice},00,000`; // Storing as string matching Base Price format for easy display
+    const finalPriceLakhs = parseInt(finalPrice, 10);
+    const PURSE_LIMIT_LAKHS = 12000; // 120 Cr
+
+    // Calculate current spending for the selected team
+    let currentSpentLakhs = 0;
+    Object.values(auctionRecords).forEach(record => {
+      if (record.team === selectedTeam) {
+        const numStr = record.final_price.replace(/[^0-9]/g, '');
+        currentSpentLakhs += (parseInt(numStr, 10) / 100000);
+      }
+    });
+
+    if (currentSpentLakhs + finalPriceLakhs > PURSE_LIMIT_LAKHS) {
+      alert(`❌ Purse limit reached! You cannot buy any more players. (₹120 Cr exhausted)`);
+      return;
+    }
 
     // Optimistic Update
     const newRecords = {
