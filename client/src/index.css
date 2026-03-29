@@ -1,0 +1,56 @@
+:root {
+  --bg-dark: #0a0b10;
+  --bg-card: #151821;
+  --bg-card-hover: #1e2230;
+  --neon-blue: #00e5ff;
+  --neon-pink: #ff007a;
+  --neon-green: #00ff88;
+  --neon-gold: #ffd700;
+  --text-primary: #ffffff;
+  --text-secondary: #8c9baf;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-glow: rgba(0, 229, 255, 0.3);
+
+  /* Team Colors */
+  --csk: #fdb913;
+  --mi: #004ba0;
+  --rcb: #ea1a2a;
+  --kkr: #3a225d;
+  --dc: #174ebd;
+  --srh: #f26522;
+  --rr: #ea1a85;
+  --pbks: #ed1b24;
+  --lsg: #2b1f82;
+  --gt: #1b2133;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(0, 229, 255, 0.05), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(255, 0, 122, 0.05), transparent 25%);
+  min-height: 100vh;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-blue);
+}

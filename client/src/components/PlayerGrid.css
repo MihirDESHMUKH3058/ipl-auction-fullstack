@@ -1,0 +1,31 @@
+.player-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+.no-results {
+  width: 100%;
+  padding: 4rem 2rem;
+  text-align: center;
+  background: var(--bg-card);
+  border-radius: 12px;
+  border: 1px dashed rgba(255,255,255,0.1);
+}
+
+.no-results h3 {
+  color: var(--neon-pink);
+  margin-bottom: 0.5rem;
+}
+
+.no-results p {
+  color: var(--text-secondary);
+}
+
+@media (max-width: 640px) {
+  .player-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+}

@@ -1,0 +1,159 @@
+.bags-view {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 4rem;
+  background: var(--bg-main);
+  min-height: calc(100vh - 80px);
+}
+
+.bags-sticky-header {
+  background: var(--bg-main);
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(0, 229, 255, 0.1);
+}
+
+.bags-controls-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bags-nav-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bag-nav-item {
+  flex: 1;
+  min-width: 140px;
+  background: transparent;
+  border: none;
+  padding: 0.75rem 0.5rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  position: relative;
+}
+
+.bag-nav-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+.bag-nav-item.active {
+  background: rgba(0, 229, 255, 0.1);
+  color: var(--neon-blue);
+}
+
+.bag-idx {
+  font-size: 0.75rem;
+  font-weight: 800;
+  opacity: 0.6;
+}
+
+.bag-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.bag-dot {
+  width: 4px;
+  height: 4px;
+  background: transparent;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.bag-nav-item.active .bag-dot {
+  background: var(--neon-blue);
+  box-shadow: 0 0 10px var(--neon-blue);
+}
+
+.bag-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bag-info h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.bag-info p {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.bag-search input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  color: #fff;
+  width: 300px;
+  transition: all 0.3s ease;
+}
+
+.bag-search input:focus {
+  outline: none;
+  border-color: var(--neon-blue);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+}
+
+.bags-content {
+  flex: 1;
+}
+
+.bags-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2.5rem;
+  scroll-margin-top: 100px; /* Gap for sticky nav */
+}
+
+.empty-bag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 1200px) {
+  .bags-view {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .bag-controls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  
+  .bag-search input {
+    width: 100%;
+  }
+}

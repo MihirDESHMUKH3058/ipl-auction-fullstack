@@ -1,0 +1,230 @@
+.player-card {
+  background: var(--bg-card);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.player-card:hover {
+  transform: translateY(-5px);
+  background: var(--bg-card-hover);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px var(--card-accent, rgba(0, 229, 255, 0.2));
+  border-color: var(--card-accent);
+}
+
+.card-header {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.team-badge {
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.origin-badge {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.card-image-container {
+  height: 250px;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.5) 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-image-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(180deg, transparent 0%, var(--bg-card) 100%);
+}
+
+.player-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  z-index: 1;
+}
+
+.sold-image .player-image {
+  filter: grayscale(100%) opacity(0.5);
+}
+
+.sold-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-15deg);
+  background: var(--neon-pink);
+  color: white;
+  padding: 0.5rem 2rem;
+  border: 4px solid white;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  box-shadow: 0 0 20px rgba(255, 0, 122, 0.8);
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.player-placeholder {
+  width: 60%;
+  height: 60%;
+  color: rgba(255,255,255,0.1);
+  margin-bottom: 2rem;
+  z-index: 1;
+}
+
+.card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  position: relative;
+  z-index: 2;
+  margin-top: -20px;
+}
+
+.player-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.player-role {
+  font-size: 0.85rem;
+  color: var(--card-accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.player-rating {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+}
+
+.star {
+  color: rgba(255,255,255,0.2);
+  font-size: 1rem;
+}
+
+.star.filled {
+  color: var(--neon-gold);
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+}
+
+.rating-text {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.card-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.base-price-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.base-price-value {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--neon-green);
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+.final-price {
+  text-shadow: 0 0 10px currentColor;
+  font-size: 1.4rem;
+}
+
+.sold-status-badge {
+  background: var(--neon-pink);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.9; }
+  50% { opacity: 1; transform: scale(1.02); }
+  100% { opacity: 0.9; }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 640px) {
+  .sold-overlay {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.9rem;
+    border-width: 2px;
+    letter-spacing: 1px;
+    box-shadow: 0 0 10px rgba(255, 0, 122, 0.6);
+    top: 40%;
+  }
+
+  .sold-status-badge {
+    font-size: 0.8rem;
+    padding: 0.4rem;
+  }
+}
