@@ -67,6 +67,7 @@ export default function FilterBar({ filters, setFilters }) {
             <option value="All">All Players</option>
             <option value="Available">Available Only</option>
             <option value="Sold">Sold Only</option>
+            <option value="Unsold">Unsold Only</option>
           </select>
         </div>
 

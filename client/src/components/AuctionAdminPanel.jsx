@@ -68,6 +68,43 @@ export default function AuctionAdminPanel({ players, auctionRecords, setAuctionR
     setFinalPrice('');
     setSearchTerm('');
   };
+  
+  const handleUnsold = async () => {
+    if (!selectedPlayerId) {
+      alert("Please select a player first!");
+      return;
+    }
+
+    const priceString = "UNSOLD";
+    const unsoldTeam = "UNSOLD";
+
+    // Optimistic Update
+    const newRecords = {
+      ...auctionRecords,
+      [selectedPlayerId]: {
+        team: unsoldTeam,
+        final_price: priceString
+      }
+    };
+    setAuctionRecords(newRecords);
+
+    // Supabase Sync
+    if (import.meta.env.VITE_SUPABASE_URL && import.meta.env.VITE_SUPABASE_URL !== 'YOUR_SUPABASE_URL_HERE') {
+      const { error } = await supabase.from('auction_records').upsert({
+        player_id: selectedPlayerId.toString(),
+        team: unsoldTeam,
+        final_price: priceString
+      });
+      if (error) {
+        console.error("Supabase unsold error:", error);
+        alert("⚠️ DATABASE UPDATE FAILED: Check connection.");
+      }
+    }
+
+    // Clear form
+    setSelectedPlayerId('');
+    setSearchTerm('');
+  };
 
   const handleResetPlayer = async (id) => {
     const stringId = id.toString();
@@ -187,28 +224,39 @@ export default function AuctionAdminPanel({ players, auctionRecords, setAuctionR
             </div>
           </div>
 
-          <button type="submit" className="submit-btn sell-btn">Mark as SOLD</button>
+
+          <div className="admin-actions-row">
+            <button type="submit" className="submit-btn sell-btn flex-1">Mark as SOLD</button>
+            <button 
+              type="button" 
+              className="submit-btn unsold-btn flex-1" 
+              onClick={handleUnsold}
+              style={{ backgroundColor: '#4a5568', borderColor: '#4a5568' }}
+            >
+              Mark as UNSOLD
+            </button>
+          </div>
         </form>
       </div>
 
-      <div className="admin-history-card">
-        <div className="history-header">
-          <h2 className="admin-title">Recent Sales History</h2>
-          <button 
-            type="button" 
-            className="export-btn" 
-            onClick={handleExport}
-            title="Download Excel matching current state"
-          >
-            📥 Export to Excel
-          </button>
-        </div>
-        <div className="history-list">
-          {Object.entries(auctionRecords).length === 0 ? (
-            <p className="empty-state">No players sold yet.</p>
-          ) : (
-            <>
-              {[...Object.entries(auctionRecords)].reverse().map(([id, record]) => {
+      <div className="admin-history-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginTop: '2rem' }}>
+        <div className="admin-history-card">
+          <div className="history-header">
+            <h2 className="admin-title">Recent Sales History</h2>
+            <button 
+              type="button" 
+              className="export-btn" 
+              onClick={handleExport}
+              title="Download Excel matching current state"
+            >
+              📥 Export
+            </button>
+          </div>
+          <div className="history-list">
+            {Object.entries(auctionRecords).filter(([_, r]) => r.team !== 'UNSOLD').length === 0 ? (
+              <p className="empty-state">No players sold yet.</p>
+            ) : (
+              [...Object.entries(auctionRecords)].filter(([_, r]) => r.team !== 'UNSOLD').reverse().map(([id, record]) => {
                 const p = players.find(p => p.id.toString() === id);
                 if (!p) return null;
                 return (
@@ -223,17 +271,47 @@ export default function AuctionAdminPanel({ players, auctionRecords, setAuctionR
                     </div>
                   </div>
                 );
-              })}
-              <button 
-                type="button" 
-                className="reset-all-btn" 
-                onClick={handleResetAll}
-              >
-                ⚠️ Reset All Players to Unsold
-              </button>
-            </>
-          )}
+              })
+            )}
+          </div>
         </div>
+
+        <div className="admin-history-card unsold-history-card">
+          <div className="history-header">
+            <h2 className="admin-title">Unsold Players History</h2>
+          </div>
+          <div className="history-list">
+            {Object.entries(auctionRecords).filter(([_, r]) => r.team === 'UNSOLD').length === 0 ? (
+              <p className="empty-state">No unsold players yet.</p>
+            ) : (
+              [...Object.entries(auctionRecords)].filter(([_, r]) => r.team === 'UNSOLD').reverse().map(([id, record]) => {
+                const p = players.find(p => p.id.toString() === id);
+                if (!p) return null;
+                return (
+                  <div key={id} className="history-item unsold-item">
+                    <div className="history-info">
+                      <strong>{p.name}</strong> 
+                      <span className="history-team badge" style={{backgroundColor: '#4a5568'}}>UNSOLD</span>
+                    </div>
+                    <div className="history-actions">
+                      <button type="button" onClick={() => handleResetPlayer(id)} className="undo-btn">Undo</button>
+                    </div>
+                  </div>
+                );
+              })
+            )}
+          </div>
+        </div>
+      </div>
+
+      <div style={{ marginTop: '2rem', textAlign: 'center' }}>
+        <button 
+          type="button" 
+          className="reset-all-btn" 
+          onClick={handleResetAll}
+        >
+          ⚠️ Reset All Players to Unsold/Available
+        </button>
       </div>
     </div>
   );

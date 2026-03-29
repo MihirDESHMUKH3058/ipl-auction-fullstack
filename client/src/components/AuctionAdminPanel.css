@@ -1,8 +1,9 @@
 .admin-panel-container {
   display: flex;
+  flex-direction: column;
   gap: 2rem;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -138,12 +139,37 @@
   letter-spacing: 2px;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.admin-actions-row {
+  display: flex;
+  gap: 1rem;
   margin-top: 1rem;
+}
+
+.unsold-btn {
+  background: #2d3748;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .sell-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 20px rgba(255, 0, 122, 0.4);
+}
+
+.unsold-btn:hover {
+  background: #4a5568;
+  border-color: rgba(255,255,255,0.3);
+  transform: translateY(-2px);
 }
 
 .history-list {
@@ -163,6 +189,10 @@
   background: var(--bg-dark);
   border-radius: 8px;
   border-left: 4px solid var(--neon-green);
+}
+
+.unsold-item {
+  border-left-color: #4a5568;
 }
 
 .history-info {

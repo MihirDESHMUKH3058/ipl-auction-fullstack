@@ -63,8 +63,10 @@ export default function PlayerCard({ player, auctionRecord }) {
         )}
         
         {auctionRecord && (
-          <div className="sold-overlay">
-            <span className="sold-text">SOLD TO {auctionRecord.team}</span>
+          <div className={`sold-overlay ${auctionRecord.team === 'UNSOLD' ? 'unsold-overlay' : ''}`}>
+            <span className="sold-text">
+              {auctionRecord.team === 'UNSOLD' ? 'UNSOLD' : `SOLD TO ${auctionRecord.team}`}
+            </span>
           </div>
         )}
       </div>
@@ -79,16 +81,18 @@ export default function PlayerCard({ player, auctionRecord }) {
         </div>
 
         {auctionRecord && (
-          <div className="sold-status-badge" style={{ backgroundColor: `var(--${auctionRecord.team.toLowerCase()})` }}>
-            SOLD TO {auctionRecord.team}
+          <div className="sold-status-badge" style={{ backgroundColor: auctionRecord.team === 'UNSOLD' ? '#4a5568' : `var(--${auctionRecord.team.toLowerCase()})` }}>
+            {auctionRecord.team === 'UNSOLD' ? 'UNSOLD' : `SOLD TO ${auctionRecord.team}`}
           </div>
         )}
 
         <div className="card-footer">
           {auctionRecord ? (
             <>
-              <div className="base-price-label">Final Price</div>
-              <div className="base-price-value final-price" style={{ color: `var(--${auctionRecord.team.toLowerCase()})` }}>{auctionRecord.final_price}</div>
+              <div className="base-price-label">{auctionRecord.team === 'UNSOLD' ? 'Status' : 'Final Price'}</div>
+              <div className="base-price-value final-price" style={{ color: auctionRecord.team === 'UNSOLD' ? '#a0aec0' : `var(--${auctionRecord.team.toLowerCase()})` }}>
+                {auctionRecord.final_price}
+              </div>
             </>
           ) : (
             <>

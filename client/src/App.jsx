@@ -283,9 +283,13 @@ function App() {
         if (playerLakhs > maxLakhs) return false;
       }
       
-      const isSold = !!auctionRecords[p.id.toString()];
-      if (filters.availability === 'Available' && isSold) return false;
+      const auctionRecord = auctionRecords[p.id.toString()];
+      const isSold = auctionRecord && auctionRecord.team !== 'UNSOLD';
+      const isUnsold = auctionRecord && auctionRecord.team === 'UNSOLD';
+
+      if (filters.availability === 'Available' && (isSold || isUnsold)) return false;
       if (filters.availability === 'Sold' && !isSold) return false;
+      if (filters.availability === 'Unsold' && !isUnsold) return false;
 
       return true;
     });
