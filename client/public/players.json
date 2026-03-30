@@ -1396,7 +1396,7 @@
     "rating": 7,
     "basePrice": "\u20b975,00,000",
     "status": "Available",
-    "image_file": "116.png"
+    "image_file": "116.webp"
   },
   {
     "id": 117,
@@ -1456,7 +1456,7 @@
     "rating": 6,
     "basePrice": "\u20b950,00,000",
     "status": "Available",
-    "image_file": "121.png"
+    "image_file": "121.jpg"
   },
   {
     "id": 122,
@@ -1852,7 +1852,7 @@
     "rating": 6,
     "basePrice": "\u20b950,00,000",
     "status": "Available",
-    "image_file": null
+    "image_file": "154.png"
   },
   {
     "id": 155,
