@@ -1,45 +1,45 @@
-// Automatically generated statistics for all players.
+// Updated with REAL stats from iplt20.com for top players
 
 export const mockPlayerStats = {
   "1": {
-    "totalRuns": "7,253",
-    "totalWickets": "10",
-    "battingSR": "132.3",
-    "bowlingEconomy": "9.0",
-    "bestScore": "57",
-    "bestBowling": "0/0"
+    "totalRuns": "6628",
+    "totalWickets": "15",
+    "battingSR": "131.14",
+    "bowlingEconomy": "8.02",
+    "bestScore": "109*",
+    "bestBowling": "4/6"
   },
   "2": {
-    "totalRuns": "3,122",
-    "totalWickets": "106",
-    "battingSR": "131.9",
-    "bowlingEconomy": "8.1",
-    "bestScore": "44",
-    "bestBowling": "5/22"
+    "totalRuns": "2525",
+    "totalWickets": "64",
+    "battingSR": "145.86",
+    "bowlingEconomy": "9.12",
+    "bestScore": "91",
+    "bestBowling": "3/14"
   },
   "3": {
-    "totalRuns": "5,053",
-    "totalWickets": "5",
-    "battingSR": "147.8",
-    "bowlingEconomy": "8.1",
-    "bestScore": "60",
-    "bestBowling": "0/0"
+    "totalRuns": "3594",
+    "totalWickets": "0",
+    "battingSR": "145.32",
+    "bowlingEconomy": "N/A",
+    "bestScore": "103*",
+    "bestBowling": "N/A"
   },
   "4": {
-    "totalRuns": "194",
-    "totalWickets": "288",
-    "battingSR": "95.2",
-    "bowlingEconomy": "7.7",
-    "bestScore": "16",
-    "bestBowling": "3/33"
+    "totalRuns": "69",
+    "totalWickets": "165",
+    "battingSR": "101.47",
+    "bowlingEconomy": "7.30",
+    "bestScore": "16*",
+    "bestBowling": "5/10"
   },
   "5": {
-    "totalRuns": "8,100",
-    "totalWickets": "9",
-    "battingSR": "127.4",
-    "bowlingEconomy": "9.3",
-    "bestScore": "77*",
-    "bestBowling": "0/0"
+    "totalRuns": "8004",
+    "totalWickets": "4",
+    "battingSR": "131.97",
+    "bowlingEconomy": "8.80",
+    "bestScore": "113*",
+    "bestBowling": "2/25"
   },
   "6": {
     "totalRuns": "146",
@@ -50,36 +50,36 @@ export const mockPlayerStats = {
     "bestBowling": "4/37"
   },
   "7": {
-    "totalRuns": "8,714",
-    "totalWickets": "5",
-    "battingSR": "144.1",
-    "bowlingEconomy": "7.9",
-    "bestScore": "86",
-    "bestBowling": "0/0"
+    "totalRuns": "3284",
+    "totalWickets": "0",
+    "battingSR": "148.93",
+    "bowlingEconomy": "N/A",
+    "bestScore": "128*",
+    "bestBowling": "N/A"
   },
   "8": {
-    "totalRuns": "5,495",
-    "totalWickets": "141",
-    "battingSR": "142.7",
-    "bowlingEconomy": "7.9",
-    "bestScore": "64*",
-    "bestBowling": "4/35"
+    "totalRuns": "2959",
+    "totalWickets": "160",
+    "battingSR": "128.74",
+    "bowlingEconomy": "7.64",
+    "bestScore": "62*",
+    "bestBowling": "5/16"
   },
   "9": {
-    "totalRuns": "963",
-    "totalWickets": "258",
-    "battingSR": "110.7",
-    "bowlingEconomy": "8.1",
-    "bestScore": "6",
-    "bestBowling": "5/22"
+    "totalRuns": "544",
+    "totalWickets": "153",
+    "battingSR": "157.97",
+    "bowlingEconomy": "6.78",
+    "bestScore": "79*",
+    "bestBowling": "4/24"
   },
   "10": {
-    "totalRuns": "9,646",
-    "totalWickets": "7",
-    "battingSR": "151.3",
-    "bowlingEconomy": "8.3",
-    "bestScore": "80",
-    "bestBowling": "0/0"
+    "totalRuns": "3582",
+    "totalWickets": "0",
+    "battingSR": "147.53",
+    "bowlingEconomy": "N/A",
+    "bestScore": "124",
+    "bestBowling": "N/A"
   },
   "11": {
     "totalRuns": "242",
@@ -90,12 +90,12 @@ export const mockPlayerStats = {
     "bestBowling": "6/38"
   },
   "12": {
-    "totalRuns": "6,296",
-    "totalWickets": "1",
-    "battingSR": "154.9",
-    "bowlingEconomy": "9.0",
-    "bestScore": "57",
-    "bestBowling": "0/0"
+    "totalRuns": "5243",
+    "totalWickets": "0",
+    "battingSR": "137.53",
+    "bowlingEconomy": "N/A",
+    "bestScore": "84*",
+    "bestBowling": "N/A"
   },
   "13": {
     "totalRuns": "786",

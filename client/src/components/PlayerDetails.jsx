@@ -122,13 +122,11 @@ export default function PlayerDetails({ player, onBack, auctionRecord }) {
             </div>
 
             <div className="player-meta">
-              <div className="meta-item prof">
-                <span className="meta-label">Batting</span>
-                <span className="meta-value">{player.batting_hand || 'N/A'}</span>
-              </div>
-              <div className="meta-item prof">
-                <span className="meta-label">Bowling</span>
-                <span className="meta-value">{player.bowling_style || 'N/A'}</span>
+              <div className="meta-item prof" style={{ flex: 1 }}>
+                <span className="meta-label">Playing Style</span>
+                <span className="meta-value" style={{ color: '#fff', fontSize: '1.1rem' }}>
+                  {player.display_role || player.role}
+                </span>
               </div>
             </div>
 
