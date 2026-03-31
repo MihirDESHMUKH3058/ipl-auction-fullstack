@@ -428,7 +428,7 @@ function App() {
               <FilterBar filters={filters} setFilters={setFilters} />
             </aside>
             <section className="grid-container">
-              <PlayerGrid players={filteredPlayers} auctionRecords={auctionRecords} onPlayerClick={setSelectedPlayer} />
+              <PlayerGrid players={filteredPlayers} auctionRecords={auctionRecords} />
             </section>
           </>
         ) : activeTab === 'admin' ? (
