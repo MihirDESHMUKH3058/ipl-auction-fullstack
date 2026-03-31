@@ -7,6 +7,7 @@ import AnonymousAuction from './components/AnonymousAuction';
 import TeamRosters from './components/TeamRosters';
 import PlayerBags from './components/PlayerBags';
 import MyTeam from './components/MyTeam';
+import PlayerDetails from './components/PlayerDetails';
 import { supabase } from './supabaseClient';
 import './App.css';
 
@@ -14,6 +15,7 @@ function App() {
   const [syncStatus, setSyncStatus] = useState('connecting');
   const [players, setPlayers] = useState([]);
   const [activeTab, setActiveTab] = useState('catalog');
+  const [selectedPlayer, setSelectedPlayer] = useState(null);
   
   // Refresh session timestamp on activity (tab change)
   useEffect(() => {
@@ -426,7 +428,7 @@ function App() {
               <FilterBar filters={filters} setFilters={setFilters} />
             </aside>
             <section className="grid-container">
-              <PlayerGrid players={filteredPlayers} auctionRecords={auctionRecords} />
+              <PlayerGrid players={filteredPlayers} auctionRecords={auctionRecords} onPlayerClick={setSelectedPlayer} />
             </section>
           </>
         ) : activeTab === 'admin' ? (
@@ -468,6 +470,14 @@ function App() {
           />
         )}
       </main>
+
+      {selectedPlayer && (
+        <PlayerDetails 
+          player={selectedPlayer} 
+          onBack={() => setSelectedPlayer(null)} 
+          auctionRecord={auctionRecords[selectedPlayer.id.toString()]}
+        />
+      )}
     </div>
   );
 }

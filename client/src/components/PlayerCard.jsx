@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './PlayerCard.css';
 
-export default function PlayerCard({ player, auctionRecord }) {
+export default function PlayerCard({ player, auctionRecord, onClick }) {
   const [imgError, setImgError] = useState(false);
 
   // Helper to determine team color variable
@@ -34,7 +34,7 @@ export default function PlayerCard({ player, auctionRecord }) {
   const fallbackUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(player.name)}&background=${getTeamHex(player.team)}&color=fff&size=250&font-size=0.33`;
 
   return (
-    <div className="player-card" style={{ '--card-accent': teamColor }}>
+    <div className="player-card" style={{ '--card-accent': teamColor }} onClick={() => onClick && onClick(player)}>
       <div className="card-header" style={{ justifyContent: 'flex-end' }}>
         <div className={`origin-badge ${player.overseas === 'Overseas' ? 'overseas' : 'indian'}`}>
           {player.overseas === 'Overseas' ? '✈️ OVS' : (
