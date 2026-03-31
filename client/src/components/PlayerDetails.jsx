@@ -122,6 +122,17 @@ export default function PlayerDetails({ player, onBack, auctionRecord }) {
             </div>
 
             <div className="player-meta">
+              <div className="meta-item prof">
+                <span className="meta-label">Batting</span>
+                <span className="meta-value">{player.batting_hand || 'N/A'}</span>
+              </div>
+              <div className="meta-item prof">
+                <span className="meta-label">Bowling</span>
+                <span className="meta-value">{player.bowling_style || 'N/A'}</span>
+              </div>
+            </div>
+
+            <div className="player-meta" style={{ marginTop: '1rem' }}>
               <div className="meta-item">
                 <span className="meta-label">Origin</span>
                 <span className="meta-value">{player.overseas === 'Overseas' ? '✈️ Overseas' : '🇮🇳 Indian'}</span>
