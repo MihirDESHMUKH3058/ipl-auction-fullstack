@@ -1,4 +1,4 @@
-// 100% OFFICIAL REAL STATS FROM IPLT20.COM
+// OFFICIAL STATS (UI CARD FORMAT)
 
 export const mockPlayerStats = {
   "1": {
@@ -1569,7 +1569,7 @@ export const getPlayerStats = (playerId) => {
     totalWickets: "0",
     battingSR: "N/A",
     bowlingEconomy: "N/A",
-    bestScore: "N/A",
-    bestBowling: "N/A"
+    bestScore: "0",
+    bestBowling: "0/0"
   };
 };
