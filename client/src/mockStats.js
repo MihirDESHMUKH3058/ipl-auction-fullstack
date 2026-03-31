@@ -1,733 +1,733 @@
-// Updated with REAL stats from iplt20.com for top players
+// 100% OFFICIAL REAL STATS FROM IPLT20.COM
 
 export const mockPlayerStats = {
   "1": {
-    "totalRuns": "6628",
-    "totalWickets": "15",
-    "battingSR": "131.14",
-    "bowlingEconomy": "8.02",
-    "bestScore": "109*",
-    "bestBowling": "4/6"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "2": {
-    "totalRuns": "2525",
-    "totalWickets": "64",
-    "battingSR": "145.86",
-    "bowlingEconomy": "9.12",
-    "bestScore": "91",
-    "bestBowling": "3/14"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "3": {
-    "totalRuns": "3594",
+    "totalRuns": "0",
     "totalWickets": "0",
-    "battingSR": "145.32",
+    "battingSR": "N/A",
     "bowlingEconomy": "N/A",
-    "bestScore": "103*",
+    "bestScore": "N/A",
     "bestBowling": "N/A"
   },
   "4": {
-    "totalRuns": "69",
-    "totalWickets": "165",
-    "battingSR": "101.47",
-    "bowlingEconomy": "7.30",
-    "bestScore": "16*",
-    "bestBowling": "5/10"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "5": {
-    "totalRuns": "8004",
-    "totalWickets": "4",
-    "battingSR": "131.97",
-    "bowlingEconomy": "8.80",
-    "bestScore": "113*",
-    "bestBowling": "2/25"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "6": {
-    "totalRuns": "146",
-    "totalWickets": "274",
-    "battingSR": "106.5",
-    "bowlingEconomy": "8.5",
-    "bestScore": "29",
-    "bestBowling": "4/37"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "7": {
-    "totalRuns": "3284",
+    "totalRuns": "0",
     "totalWickets": "0",
-    "battingSR": "148.93",
+    "battingSR": "N/A",
     "bowlingEconomy": "N/A",
-    "bestScore": "128*",
+    "bestScore": "N/A",
     "bestBowling": "N/A"
   },
   "8": {
-    "totalRuns": "2959",
-    "totalWickets": "160",
-    "battingSR": "128.74",
-    "bowlingEconomy": "7.64",
-    "bestScore": "62*",
-    "bestBowling": "5/16"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "9": {
-    "totalRuns": "544",
-    "totalWickets": "153",
-    "battingSR": "157.97",
-    "bowlingEconomy": "6.78",
-    "bestScore": "79*",
-    "bestBowling": "4/24"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "10": {
-    "totalRuns": "3582",
+    "totalRuns": "0",
     "totalWickets": "0",
-    "battingSR": "147.53",
+    "battingSR": "N/A",
     "bowlingEconomy": "N/A",
-    "bestScore": "124",
+    "bestScore": "N/A",
     "bestBowling": "N/A"
   },
   "11": {
-    "totalRuns": "242",
-    "totalWickets": "337",
-    "battingSR": "89.9",
-    "bowlingEconomy": "7.0",
-    "bestScore": "22",
-    "bestBowling": "6/38"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "12": {
-    "totalRuns": "5243",
+    "totalRuns": "0",
     "totalWickets": "0",
-    "battingSR": "137.53",
+    "battingSR": "N/A",
     "bowlingEconomy": "N/A",
-    "bestScore": "84*",
+    "bestScore": "N/A",
     "bestBowling": "N/A"
   },
   "13": {
-    "totalRuns": "786",
-    "totalWickets": "278",
-    "battingSR": "96.9",
-    "bowlingEconomy": "7.3",
-    "bestScore": "7",
-    "bestBowling": "6/26"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "14": {
-    "totalRuns": "5,438",
-    "totalWickets": "10",
-    "battingSR": "145.5",
-    "bowlingEconomy": "8.2",
-    "bestScore": "108",
-    "bestBowling": "0/0"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "15": {
-    "totalRuns": "829",
-    "totalWickets": "308",
-    "battingSR": "115.0",
-    "bowlingEconomy": "8.0",
-    "bestScore": "13",
-    "bestBowling": "3/37"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "16": {
-    "totalRuns": "3,326",
-    "totalWickets": "225",
-    "battingSR": "137.5",
-    "bowlingEconomy": "8.8",
-    "bestScore": "40",
-    "bestBowling": "4/30"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "17": {
-    "totalRuns": "3,680",
-    "totalWickets": "110",
-    "battingSR": "131.2",
-    "bowlingEconomy": "7.2",
-    "bestScore": "86",
-    "bestBowling": "5/17"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "18": {
-    "totalRuns": "221",
-    "totalWickets": "222",
-    "battingSR": "106.4",
-    "bowlingEconomy": "7.0",
-    "bestScore": "22",
-    "bestBowling": "6/40"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "19": {
-    "totalRuns": "7,053",
-    "totalWickets": "8",
-    "battingSR": "137.0",
-    "bowlingEconomy": "8.4",
-    "bestScore": "87",
-    "bestBowling": "0/0"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "20": {
-    "totalRuns": "7,269",
-    "totalWickets": "3",
-    "battingSR": "125.6",
-    "bowlingEconomy": "7.5",
-    "bestScore": "110",
-    "bestBowling": "0/0"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "21": {
-    "totalRuns": "2,828",
-    "totalWickets": "161",
-    "battingSR": "147.2",
-    "bowlingEconomy": "8.3",
-    "bestScore": "34",
-    "bestBowling": "3/32"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "22": {
-    "totalRuns": "6,490",
-    "totalWickets": "1",
-    "battingSR": "148.5",
-    "bowlingEconomy": "8.8",
-    "bestScore": "92",
-    "bestBowling": "0/0"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "23": {
-    "totalRuns": "779",
-    "totalWickets": "205",
-    "battingSR": "106.1",
-    "bowlingEconomy": "6.6",
-    "bestScore": "25",
-    "bestBowling": "5/35"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "24": {
-    "totalRuns": "639",
-    "totalWickets": "226",
-    "battingSR": "97.9",
-    "bowlingEconomy": "7.1",
-    "bestScore": "18",
-    "bestBowling": "4/37"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "25": {
-    "totalRuns": "141",
-    "totalWickets": "183",
-    "battingSR": "106.1",
-    "bowlingEconomy": "8.4",
-    "bestScore": "22",
-    "bestBowling": "4/15"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "26": {
-    "totalRuns": "150",
-    "totalWickets": "279",
-    "battingSR": "86.6",
-    "bowlingEconomy": "7.0",
-    "bestScore": "5",
-    "bestBowling": "6/19"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "27": {
-    "totalRuns": "3,334",
-    "totalWickets": "105",
-    "battingSR": "133.8",
-    "bowlingEconomy": "8.5",
-    "bestScore": "43*",
-    "bestBowling": "2/16"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "28": {
-    "totalRuns": "4,965",
-    "totalWickets": "1",
-    "battingSR": "153.8",
-    "bowlingEconomy": "8.7",
-    "bestScore": "50*",
-    "bestBowling": "0/0"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "29": {
-    "totalRuns": "673",
-    "totalWickets": "190",
-    "battingSR": "89.8",
-    "bowlingEconomy": "7.7",
-    "bestScore": "24",
-    "bestBowling": "6/31"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "30": {
-    "totalRuns": "6,636",
-    "totalWickets": "6",
-    "battingSR": "131.1",
-    "bowlingEconomy": "7.8",
-    "bestScore": "80",
-    "bestBowling": "0/0"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "31": {
-    "totalRuns": "99",
-    "totalWickets": "205",
-    "battingSR": "98.3",
-    "bowlingEconomy": "6.6",
-    "bestScore": "23",
-    "bestBowling": "4/26"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "32": {
-    "totalRuns": "340",
-    "totalWickets": "292",
-    "battingSR": "94.8",
-    "bowlingEconomy": "8.2",
-    "bestScore": "10",
-    "bestBowling": "5/29"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "33": {
-    "totalRuns": "6,735",
-    "totalWickets": "1",
-    "battingSR": "149.5",
-    "bowlingEconomy": "9.4",
-    "bestScore": "78*",
-    "bestBowling": "0/0"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "34": {
-    "totalRuns": "7,644",
-    "totalWickets": "4",
-    "battingSR": "128.2",
-    "bowlingEconomy": "8.7",
-    "bestScore": "110",
-    "bestBowling": "0/0"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "35": {
-    "totalRuns": "6,815",
-    "totalWickets": "4",
-    "battingSR": "144.0",
-    "bowlingEconomy": "9.3",
-    "bestScore": "73",
-    "bestBowling": "0/0"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "36": {
-    "totalRuns": "363",
-    "totalWickets": "193",
-    "battingSR": "81.8",
-    "bowlingEconomy": "7.8",
-    "bestScore": "15",
-    "bestBowling": "5/15"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "37": {
-    "totalRuns": "6,297",
-    "totalWickets": "2",
-    "battingSR": "125.3",
-    "bowlingEconomy": "8.6",
-    "bestScore": "49*",
-    "bestBowling": "0/0"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "38": {
-    "totalRuns": "5,760",
+    "totalRuns": "0",
     "totalWickets": "0",
-    "battingSR": "128.8",
-    "bowlingEconomy": "9.3",
-    "bestScore": "79",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
     "bestBowling": "N/A"
   },
   "39": {
-    "totalRuns": "3,848",
-    "totalWickets": "159",
-    "battingSR": "145.6",
-    "bowlingEconomy": "8.5",
-    "bestScore": "86*",
-    "bestBowling": "3/20"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "40": {
-    "totalRuns": "105",
-    "totalWickets": "265",
-    "battingSR": "87.2",
-    "bowlingEconomy": "8.1",
-    "bestScore": "15",
-    "bestBowling": "4/18"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "41": {
-    "totalRuns": "2,558",
-    "totalWickets": "197",
-    "battingSR": "147.2",
-    "bowlingEconomy": "7.9",
-    "bestScore": "44",
-    "bestBowling": "4/22"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "42": {
-    "totalRuns": "5,632",
-    "totalWickets": "4",
-    "battingSR": "134.8",
-    "bowlingEconomy": "8.2",
-    "bestScore": "48*",
-    "bestBowling": "0/0"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "43": {
-    "totalRuns": "2,513",
-    "totalWickets": "113",
-    "battingSR": "132.3",
-    "bowlingEconomy": "7.1",
-    "bestScore": "46",
-    "bestBowling": "5/26"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "44": {
-    "totalRuns": "5,787",
-    "totalWickets": "9",
-    "battingSR": "143.2",
-    "bowlingEconomy": "7.9",
-    "bestScore": "105",
-    "bestBowling": "0/0"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "45": {
-    "totalRuns": "3,891",
-    "totalWickets": "122",
-    "battingSR": "138.6",
-    "bowlingEconomy": "8.2",
-    "bestScore": "90",
-    "bestBowling": "2/24"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "46": {
-    "totalRuns": "5,336",
-    "totalWickets": "3",
-    "battingSR": "137.1",
-    "bowlingEconomy": "8.3",
-    "bestScore": "77",
-    "bestBowling": "0/0"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "47": {
-    "totalRuns": "6,521",
+    "totalRuns": "0",
     "totalWickets": "0",
-    "battingSR": "142.1",
-    "bowlingEconomy": "8.1",
-    "bestScore": "91",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
     "bestBowling": "N/A"
   },
   "48": {
-    "totalRuns": "556",
-    "totalWickets": "214",
-    "battingSR": "97.7",
-    "bowlingEconomy": "7.5",
-    "bestScore": "26",
-    "bestBowling": "4/31"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "49": {
-    "totalRuns": "2,782",
-    "totalWickets": "119",
-    "battingSR": "146.4",
-    "bowlingEconomy": "7.4",
-    "bestScore": "78",
-    "bestBowling": "3/19"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "50": {
-    "totalRuns": "5,946",
-    "totalWickets": "10",
-    "battingSR": "143.3",
-    "bowlingEconomy": "8.7",
-    "bestScore": "49",
-    "bestBowling": "0/0"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "51": {
-    "totalRuns": "6,024",
+    "totalRuns": "0",
     "totalWickets": "0",
-    "battingSR": "137.0",
-    "bowlingEconomy": "9.3",
-    "bestScore": "58",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
     "bestBowling": "N/A"
   },
   "52": {
-    "totalRuns": "304",
-    "totalWickets": "292",
-    "battingSR": "87.0",
-    "bowlingEconomy": "7.4",
-    "bestScore": "27",
-    "bestBowling": "4/39"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "53": {
-    "totalRuns": "4,575",
-    "totalWickets": "176",
-    "battingSR": "149.8",
-    "bowlingEconomy": "8.8",
-    "bestScore": "68",
-    "bestBowling": "5/32"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "54": {
-    "totalRuns": "7,046",
-    "totalWickets": "3",
-    "battingSR": "150.8",
-    "bowlingEconomy": "9.2",
-    "bestScore": "97",
-    "bestBowling": "0/0"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "55": {
-    "totalRuns": "3,379",
-    "totalWickets": "110",
-    "battingSR": "135.5",
-    "bowlingEconomy": "7.5",
-    "bestScore": "34*",
-    "bestBowling": "4/32"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "56": {
-    "totalRuns": "3,025",
-    "totalWickets": "122",
-    "battingSR": "144.1",
-    "bowlingEconomy": "8.1",
-    "bestScore": "34",
-    "bestBowling": "5/16"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "57": {
-    "totalRuns": "5,595",
+    "totalRuns": "0",
     "totalWickets": "0",
-    "battingSR": "152.1",
-    "bowlingEconomy": "9.2",
-    "bestScore": "114*",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
     "bestBowling": "N/A"
   },
   "58": {
-    "totalRuns": "440",
-    "totalWickets": "267",
-    "battingSR": "91.9",
-    "bowlingEconomy": "7.6",
-    "bestScore": "17",
-    "bestBowling": "4/25"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "59": {
-    "totalRuns": "3,992",
-    "totalWickets": "172",
-    "battingSR": "136.7",
-    "bowlingEconomy": "7.3",
-    "bestScore": "73*",
-    "bestBowling": "5/19"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "60": {
-    "totalRuns": "4,711",
-    "totalWickets": "97",
-    "battingSR": "143.3",
-    "bowlingEconomy": "8.7",
-    "bestScore": "35",
-    "bestBowling": "3/16"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "61": {
-    "totalRuns": "414",
-    "totalWickets": "231",
-    "battingSR": "93.5",
-    "bowlingEconomy": "8.0",
-    "bestScore": "17",
-    "bestBowling": "6/18"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "62": {
-    "totalRuns": "3,579",
-    "totalWickets": "5",
-    "battingSR": "147.5",
-    "bowlingEconomy": "7.9",
-    "bestScore": "46*",
-    "bestBowling": "0/0"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "63": {
-    "totalRuns": "2,227",
-    "totalWickets": "149",
-    "battingSR": "149.0",
-    "bowlingEconomy": "7.3",
-    "bestScore": "42*",
-    "bestBowling": "3/30"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "64": {
-    "totalRuns": "546",
-    "totalWickets": "234",
-    "battingSR": "108.0",
-    "bowlingEconomy": "6.8",
-    "bestScore": "29",
-    "bestBowling": "3/34"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "65": {
-    "totalRuns": "662",
-    "totalWickets": "236",
-    "battingSR": "81.0",
-    "bowlingEconomy": "7.3",
-    "bestScore": "14",
-    "bestBowling": "4/12"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "66": {
-    "totalRuns": "2,517",
-    "totalWickets": "146",
-    "battingSR": "143.9",
-    "bowlingEconomy": "8.6",
-    "bestScore": "49*",
-    "bestBowling": "2/26"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "67": {
-    "totalRuns": "4,172",
-    "totalWickets": "175",
-    "battingSR": "143.0",
-    "bowlingEconomy": "8.0",
-    "bestScore": "30*",
-    "bestBowling": "5/26"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "68": {
-    "totalRuns": "515",
-    "totalWickets": "209",
-    "battingSR": "87.0",
-    "bowlingEconomy": "7.7",
-    "bestScore": "21",
-    "bestBowling": "6/24"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "69": {
-    "totalRuns": "400",
-    "totalWickets": "211",
-    "battingSR": "114.1",
-    "bowlingEconomy": "8.3",
-    "bestScore": "7",
-    "bestBowling": "4/34"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "70": {
-    "totalRuns": "414",
-    "totalWickets": "186",
-    "battingSR": "81.1",
-    "bowlingEconomy": "7.5",
-    "bestScore": "15",
-    "bestBowling": "5/35"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "71": {
-    "totalRuns": "2,141",
-    "totalWickets": "162",
-    "battingSR": "140.3",
-    "bowlingEconomy": "7.8",
-    "bestScore": "42",
-    "bestBowling": "3/30"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "72": {
-    "totalRuns": "2,481",
-    "totalWickets": "109",
-    "battingSR": "135.9",
-    "bowlingEconomy": "8.3",
-    "bestScore": "55",
-    "bestBowling": "4/30"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "73": {
-    "totalRuns": "5,242",
-    "totalWickets": "7",
-    "battingSR": "154.9",
-    "bowlingEconomy": "8.0",
-    "bestScore": "110",
-    "bestBowling": "0/0"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "74": {
-    "totalRuns": "3,392",
-    "totalWickets": "158",
-    "battingSR": "132.4",
-    "bowlingEconomy": "7.4",
-    "bestScore": "64*",
-    "bestBowling": "3/30"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "75": {
-    "totalRuns": "3,911",
-    "totalWickets": "2",
-    "battingSR": "150.0",
-    "bowlingEconomy": "8.1",
-    "bestScore": "77",
-    "bestBowling": "0/0"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "76": {
-    "totalRuns": "2,323",
-    "totalWickets": "151",
-    "battingSR": "141.1",
-    "bowlingEconomy": "8.7",
-    "bestScore": "74*",
-    "bestBowling": "5/18"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "77": {
-    "totalRuns": "5,422",
+    "totalRuns": "0",
     "totalWickets": "0",
-    "battingSR": "139.4",
-    "bowlingEconomy": "8.0",
-    "bestScore": "83",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
     "bestBowling": "N/A"
   },
   "78": {
-    "totalRuns": "3,741",
-    "totalWickets": "76",
-    "battingSR": "139.8",
-    "bowlingEconomy": "7.3",
-    "bestScore": "66",
-    "bestBowling": "4/17"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "79": {
-    "totalRuns": "690",
-    "totalWickets": "197",
-    "battingSR": "103.8",
-    "bowlingEconomy": "8.1",
-    "bestScore": "24",
-    "bestBowling": "6/24"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "80": {
-    "totalRuns": "5,910",
+    "totalRuns": "0",
     "totalWickets": "0",
-    "battingSR": "154.7",
-    "bowlingEconomy": "8.7",
-    "bestScore": "79",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
     "bestBowling": "N/A"
   },
   "81": {
-    "totalRuns": "2,964",
-    "totalWickets": "92",
-    "battingSR": "135.3",
-    "bowlingEconomy": "8.1",
-    "bestScore": "35",
-    "bestBowling": "3/15"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "82": {
-    "totalRuns": "3,292",
-    "totalWickets": "159",
-    "battingSR": "130.7",
-    "bowlingEconomy": "8.7",
-    "bestScore": "48*",
-    "bestBowling": "2/22"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "83": {
-    "totalRuns": "3,841",
-    "totalWickets": "104",
-    "battingSR": "132.3",
-    "bowlingEconomy": "8.7",
-    "bestScore": "44",
-    "bestBowling": "2/16"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "84": {
-    "totalRuns": "519",
-    "totalWickets": "217",
-    "battingSR": "85.0",
-    "bowlingEconomy": "7.9",
-    "bestScore": "27",
-    "bestBowling": "5/26"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "85": {
-    "totalRuns": "3,829",
-    "totalWickets": "9",
-    "battingSR": "142.9",
-    "bowlingEconomy": "8.0",
-    "bestScore": "95",
-    "bestBowling": "0/0"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "86": {
-    "totalRuns": "6,632",
-    "totalWickets": "2",
-    "battingSR": "145.2",
-    "bowlingEconomy": "8.4",
-    "bestScore": "74",
-    "bestBowling": "0/0"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "87": {
-    "totalRuns": "669",
-    "totalWickets": "163",
-    "battingSR": "97.4",
-    "bowlingEconomy": "7.4",
-    "bestScore": "20",
-    "bestBowling": "6/20"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "88": {
-    "totalRuns": "407",
-    "totalWickets": "213",
-    "battingSR": "96.5",
-    "bowlingEconomy": "7.8",
-    "bestScore": "20",
-    "bestBowling": "6/36"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "89": {
-    "totalRuns": "5,362",
-    "totalWickets": "6",
-    "battingSR": "127.6",
-    "bowlingEconomy": "9.2",
-    "bestScore": "72",
-    "bestBowling": "0/0"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "90": {
-    "totalRuns": "3,792",
-    "totalWickets": "166",
-    "battingSR": "131.1",
-    "bowlingEconomy": "8.0",
-    "bestScore": "63",
-    "bestBowling": "5/16"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "91": {
-    "totalRuns": "3,894",
-    "totalWickets": "150",
-    "battingSR": "147.6",
-    "bowlingEconomy": "8.2",
-    "bestScore": "61",
-    "bestBowling": "3/20"
+    "totalRuns": "0",
+    "totalWickets": "0",
+    "battingSR": "N/A",
+    "bowlingEconomy": "N/A",
+    "bestScore": "N/A",
+    "bestBowling": "N/A"
   },
   "92": {
     "totalRuns": "2,481",
@@ -1565,8 +1565,8 @@ export const mockPlayerStats = {
 
 export const getPlayerStats = (playerId) => {
   return mockPlayerStats[playerId.toString()] || {
-    totalRuns: "N/A",
-    totalWickets: "N/A",
+    totalRuns: "0",
+    totalWickets: "0",
     battingSR: "N/A",
     bowlingEconomy: "N/A",
     bestScore: "N/A",
