@@ -1,7 +1,26 @@
 import React, { useState } from 'react';
+import { supabase } from '../supabaseClient';
 
 export default function Header({ activeTab, setActiveTab, isAdmin, setIsAdmin, userTeam, setUserTeam, setIsAuthenticated, setShowLogin, refreshData, syncStatus, lastSynced }) {
-  const handleLogout = () => {
+  const handleLogout = async () => {
+    // 1. Clear from Supabase DB session store if team login
+    const savedSession = localStorage.getItem('ipl_auction_session');
+    if (savedSession) {
+      try {
+        const { code, is_admin, session_id } = JSON.parse(savedSession);
+        if (!is_admin && code) {
+          await supabase
+            .from('active_franchise_sessions')
+            .delete()
+            .eq('franchise_id', code)
+            .eq('session_id', session_id);
+        }
+      } catch (e) {
+        console.error("Logout DB cleanup failed:", e);
+      }
+    }
+
+    // 2. Clear local state
     localStorage.removeItem('ipl_auction_session');
     setIsAuthenticated(false);
     setIsAdmin(false);

@@ -39,6 +39,14 @@ function App() {
   const [adminPassword, setAdminPassword] = useState('');
   const [presenceState, setPresenceState] = useState({});
   const [myPresenceId] = useState(() => Math.random().toString(36).substr(2, 9));
+  const [mySessionId] = useState(() => {
+    // Persistent sessionId for the current browser/device
+    const saved = localStorage.getItem('ipl_auction_session_id');
+    if (saved) return saved;
+    const newId = Math.random().toString(36).substr(2, 9);
+    localStorage.setItem('ipl_auction_session_id', newId);
+    return newId;
+  });
   
   // Load initial state from localStorage if available
   const [auctionRecords, setAuctionRecords] = useState(() => {
@@ -59,34 +67,52 @@ function App() {
 
   // 1. Session Persistence Check on Mount
   useEffect(() => {
-    const savedSession = localStorage.getItem('ipl_auction_session');
-    if (savedSession) {
-      try {
-        const { code, is_admin, timestamp } = JSON.parse(savedSession);
-        const now = Date.now();
-        const thirtyMinutes = 30 * 60 * 1000;
+    const checkSession = async () => {
+      const savedSession = localStorage.getItem('ipl_auction_session');
+      if (savedSession) {
+        try {
+          const parsed = JSON.parse(savedSession);
+          const { code, is_admin, session_id } = parsed;
+          if (is_admin) {
+             console.log("Restoring admin session.");
+             setLoginCode(code);
+             setIsAdmin(true);
+             setIsAuthenticated(true);
+             setShowLogin(false);
+             return;
+          }
 
-        if (now - timestamp < thirtyMinutes) {
-          console.log("Restoring session for:", code);
-          setLoginCode(code);
-          setIsAdmin(is_admin);
-          setIsAuthenticated(true);
-          setShowLogin(false);
-          if (!is_admin) {
-            // Map 'CSK26' -> 'CSK'
+          // Check against database for franchise
+          const { data: activeSession, error } = await supabase
+            .from('active_franchise_sessions')
+            .select('*')
+            .eq('franchise_id', code)
+            .single();
+
+          const now = Date.now();
+          const thirtyMinutes = 30 * 60 * 1000;
+          const isExpired = activeSession ? (now - new Date(activeSession.last_activity).getTime() > thirtyMinutes) : true;
+
+          if (activeSession && activeSession.session_id === session_id && !isExpired) {
+            console.log("Restoring persistent session for:", code);
+            setLoginCode(code);
+            setIsAdmin(is_admin);
+            setIsAuthenticated(true);
+            setShowLogin(false);
             const actualTeam = code.replace('26', '');
             setUserTeam(actualTeam);
+          } else {
+            console.warn("Session invalid or expired in DB.");
+            localStorage.removeItem('ipl_auction_session');
           }
-        } else {
-          console.log("Session expired.");
+        } catch (e) {
+          console.error("Failed to parse/validate saved session", e);
           localStorage.removeItem('ipl_auction_session');
         }
-      } catch (e) {
-        console.error("Failed to parse saved session", e);
-        localStorage.removeItem('ipl_auction_session');
       }
-    }
-  }, []);
+    };
+    checkSession();
+  }, [mySessionId]); // mySessionId is stable but good to have as dependency
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}players.json`)
@@ -231,7 +257,23 @@ function App() {
     };
     
     trackPresence();
-  }, [isAuthenticated, isAdmin, loginCode, myPresenceId]);
+
+    // 3. Heartbeat for DB session
+    let heartbeat;
+    if (isAuthenticated && !isAdmin && loginCode) {
+      heartbeat = setInterval(async () => {
+        await supabase
+          .from('active_franchise_sessions')
+          .update({ last_activity: new Date().toISOString() })
+          .eq('franchise_id', loginCode)
+          .eq('session_id', mySessionId);
+      }, 60 * 1000); // Every minute
+    }
+
+    return () => {
+      if (heartbeat) clearInterval(heartbeat);
+    };
+  }, [isAuthenticated, isAdmin, loginCode, myPresenceId, mySessionId]);
 
   // Also sync to local Excel file (only works on local dev server)
   useEffect(() => {
@@ -297,21 +339,44 @@ function App() {
     });
   }, [players, filters, auctionRecords]);
 
-  const handleLoginSubmit = (e) => {
+  const handleLoginSubmit = async (e) => {
     e.preventDefault();
     const teamCodes = ['CSK26', 'MI26', 'RCB26', 'KKR26', 'SRH26', 'DC26', 'PBKS26', 'RR26', 'LSG26', 'GT26'];
-    const adminCodes = ['IPL_ADMIN_2026', 'etc@2027'];
 
     if (loginCode === 'IPL_ADMIN_2026') {
       setShowPasswordStep(true);
     } else if (teamCodes.includes(loginCode)) {
-      // Check if team is already joined by someone else
-      const isTeamActive = Object.values(presenceState).some(presences => 
-        presences.some(p => p.team === loginCode && p.id !== myPresenceId)
-      );
+      // 1. Rigorous check for active DB session
+      const { data: activeSession, error: fetchError } = await supabase
+        .from('active_franchise_sessions')
+        .select('*')
+        .eq('franchise_id', loginCode)
+        .maybeSingle();
 
-      if (isTeamActive) {
-        alert(`Team ${loginCode} is already joined by another user! Only one person per team can join.`);
+      if (activeSession) {
+        const now = Date.now();
+        const thirtyMinutes = 30 * 60 * 1000;
+        const lastSeen = new Date(activeSession.last_activity).getTime();
+        
+        // If session is NOT expired and NOT the same device
+        if ((now - lastSeen < thirtyMinutes) && (activeSession.session_id !== mySessionId)) {
+          alert(`❌ Access Denied: A user from this franchise (Team ${loginCode}) is already logged in.\n\nPlease try again later once they logout or their session expires.`);
+          return;
+        }
+      }
+
+      // 2. Either no session, it's expired, or it's the same device -> Allow / Renew
+      const { error } = await supabase
+        .from('active_franchise_sessions')
+        .upsert({
+          franchise_id: loginCode,
+          session_id: mySessionId,
+          last_activity: new Date().toISOString()
+        });
+
+      if (error) {
+        console.error("Failed to establish session in DB:", error);
+        alert("System error establishing secure session. Please try again.");
         return;
       }
 
@@ -325,9 +390,10 @@ function App() {
       
       // Save session to localStorage
       localStorage.setItem('ipl_auction_session', JSON.stringify({
-        code: loginCode, // Keep the full code for session restoration
+        code: loginCode, 
         is_admin: false,
-        timestamp: Date.now()
+        timestamp: Date.now(),
+        session_id: mySessionId
       }));
 
       // Track presence if channel is ready
