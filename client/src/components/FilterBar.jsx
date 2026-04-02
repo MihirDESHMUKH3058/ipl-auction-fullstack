@@ -18,7 +18,31 @@ export default function FilterBar({ filters, setFilters }) {
         <span className="filter-toggle-icon">{isOpen ? '▲' : '▼'}</span>
       </div>
       
+      
       <div className="filter-content">
+        <div className="filter-group search-group">
+          <label>Search Player</label>
+          <div className="search-input-wrapper">
+            <input 
+              type="text" 
+              name="search" 
+              placeholder="Enter name..." 
+              value={filters.search || ''} 
+              onChange={handleChange}
+              autoComplete="off"
+            />
+            {filters.search && (
+              <button 
+                className="clear-search" 
+                onClick={() => setFilters({...filters, search: ''})}
+                title="Clear Search"
+              >
+                ✕
+              </button>
+            )}
+          </div>
+        </div>
+
         <div className="filter-group">
           <label>Role</label>
           <select name="role" value={filters.role} onChange={handleChange}>
@@ -71,7 +95,7 @@ export default function FilterBar({ filters, setFilters }) {
           </select>
         </div>
 
-        <button className="reset-btn" onClick={() => setFilters({ role: 'All', origin: 'All', rating: 'All', price: 'All', availability: 'All' })}>
+        <button className="reset-btn" onClick={() => setFilters({ role: 'All', origin: 'All', rating: 'All', price: 'All', availability: 'All', search: '' })}>
           Reset Filters
         </button>
       </div>

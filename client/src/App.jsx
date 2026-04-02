@@ -62,7 +62,8 @@ function App() {
     origin: 'All',
     rating: 'All',
     price: 'All',
-    availability: 'All'
+    availability: 'All',
+    search: ''
   });
 
   // 1. Session Persistence Check on Mount
@@ -334,6 +335,12 @@ function App() {
       if (filters.availability === 'Available' && (isSold || isUnsold)) return false;
       if (filters.availability === 'Sold' && !isSold) return false;
       if (filters.availability === 'Unsold' && !isUnsold) return false;
+
+      if (filters.search) {
+        const searchTerm = filters.search.toLowerCase();
+        const playerName = p.name ? p.name.toLowerCase() : '';
+        if (!playerName.includes(searchTerm)) return false;
+      }
 
       return true;
     });
