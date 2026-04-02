@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import PlayerGrid from './PlayerGrid';
 import './TeamRosters.css'; // Reusing team roster styles
 
 export default function MyTeam({ players, auctionRecords, userTeam }) {
@@ -61,21 +62,13 @@ export default function MyTeam({ players, auctionRecords, userTeam }) {
           </div>
         </div>
         
-        <div className="team-list">
+        <div className="team-list" style={{ padding: '1rem', background: 'transparent' }}>
           {teamData.roster.length === 0 ? (
             <div className="empty-roster">You haven't bought any players yet. Go to the Catalog to see available players!</div>
           ) : (
-            teamData.roster.map(player => (
-              <div key={player.id} className="roster-player">
-                <div className="roster-player-info">
-                  <span className="roster-name">{player.name}</span>
-                  <span className="roster-role">
-                    {player.role} • {player.overseas === 'Overseas' ? '✈️' : '🇮🇳'} • ⭐ {player.rating || 'N/A'}
-                  </span>
-                </div>
-                <span className="roster-price">{player.final_price}</span>
-              </div>
-            ))
+            <div style={{ marginTop: '1rem' }}>
+              <PlayerGrid players={teamData.roster} auctionRecords={auctionRecords} />
+            </div>
           )}
         </div>
       </div>
