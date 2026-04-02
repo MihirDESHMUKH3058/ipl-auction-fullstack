@@ -17,10 +17,9 @@ export default function AuctionAdminPanel({ players, auctionRecords, setAuctionR
 
   const handleSell = async (e) => {
     e.preventDefault();
-    if (!selectedPlayerId || !selectedTeam || !finalPrice) return;
-
-    const priceString = `₹${finalPrice},00,000`; // Storing as string matching Base Price format for easy display
-    const finalPriceLakhs = parseInt(finalPrice, 10);
+    const finalPriceCr = parseFloat(finalPrice);
+    const finalPriceLakhs = finalPriceCr * 100;
+    const priceString = `₹${(finalPriceLakhs * 100000).toLocaleString('en-IN')}`;
     const PURSE_LIMIT_LAKHS = 12000; // 120 Cr
 
     // Calculate current spending for the selected team
@@ -208,18 +207,19 @@ export default function AuctionAdminPanel({ players, auctionRecords, setAuctionR
             </div>
 
             <div className="form-group flex-1">
-              <label>Final Price (in Lakhs)</label>
+              <label>Final Price (in Crores)</label>
               <div className="price-input-wrapper">
                 <span className="currency-symbol">₹</span>
                 <input 
                   type="number" 
                   min="0" 
-                  placeholder="e.g. 200 for 2Cr" 
+                  step="0.01"
+                  placeholder="e.g. 1.25 for 1.25Cr" 
                   value={finalPrice} 
                   onChange={(e) => setFinalPrice(e.target.value)}
                   required
                 />
-                <span className="lakhs-suffix">Lakhs</span>
+                <span className="crores-suffix">Cr</span>
               </div>
             </div>
           </div>

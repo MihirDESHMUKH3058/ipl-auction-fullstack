@@ -121,7 +121,7 @@
   padding-right: 0.5rem;
 }
 
-.currency-symbol, .lakhs-suffix {
+.currency-symbol, .crores-suffix {
   padding: 0 1rem;
   color: var(--text-secondary);
   font-weight: 600;
