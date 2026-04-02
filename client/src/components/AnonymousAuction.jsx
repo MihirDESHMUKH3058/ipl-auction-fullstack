@@ -129,12 +129,10 @@ export default function AnonymousAuction({ players, auctionRecords, setAuctionRe
   }, [activePlayerId]);
 
   useEffect(() => {
-    if (userTeam && dbBids.length > 0) {
+    if (userTeam) {
       const existing = dbBids.find(b => b.team_name === userTeam);
       if (existing) {
         setMyBid((existing.amount / 100).toString());
-      } else {
-        setMyBid('');
       }
     }
   }, [dbBids, userTeam]);
@@ -383,28 +381,73 @@ export default function AnonymousAuction({ players, auctionRecords, setAuctionRe
                         ))}
                       </div>
                     </div>
-                  ) : timeLeft > 0 ? (
-                    <>
-                      <h3>Enter Your Bid (Confidential)</h3>
-                      <div className="bid-input-wrapper large-bid-input">
-                        <span className="currency" style={{fontSize: '1.5rem'}}>₹</span>
-                        <input 
-                          type="number" 
-                          step="0.01"
-                          placeholder="Price in Crore (e.g. 12.8)"
-                          value={myBid}
-                          onChange={(e) => setMyBid(e.target.value)}
-                        />
-                         <span className="lakhs-suffix" style={{fontSize: '1.2rem', marginLeft: '0.5rem', color: '#a0aec0'}}>Cr</span>
-                      </div>
-                      <button className="action-btn submit-bid-btn" onClick={handleSubmitBid}>Submit Bid</button>
-                    </>
-                  ) : (
-                    <div className="time-up-msg">
-                      <h3>⌛ TIME IS UP</h3>
-                      <p>Bidding has closed for this player. Waiting for Admin reveal.</p>
-                    </div>
-                  )}
+                  ) : (() => {
+                    const submittedBid = userTeam ? dbBids.find(b => b.team_name === userTeam) : null;
+                    if (submittedBid) {
+                      const submitTime = submittedBid.created_at ? new Date(submittedBid.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }) : 'Unknown Time';
+                      return (
+                        <div className="bid-submitted-banner" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                          <h3 style={{ color: '#48bb78', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                            Bid Locked In
+                          </h3>
+                          <div className="locked-bid-amount" style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#e2e8f0', background: 'rgba(255,255,255,0.05)', padding: '1rem 2rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)', marginBottom: '1.5rem' }}>
+                            <span className="currency" style={{ fontSize: '1.5rem', color: '#63b3ed', marginRight: '0.2rem' }}>₹</span>
+                            {(submittedBid.amount / 100).toString()}
+                            <span className="lakhs-suffix" style={{ fontSize: '1.2rem', marginLeft: '0.5rem', color: '#a0aec0' }}>Cr</span>
+                          </div>
+                          <div style={{ background: 'rgba(49, 151, 149, 0.1)', border: '1px solid rgba(49, 151, 149, 0.2)', padding: '0.8rem 1.2rem', borderRadius: '8px', width: '100%' }}>
+                            <p className="timestamp-info" style={{ textAlign: 'center', margin: 0, color: '#81e6d9', fontSize: '0.95rem' }}>
+                              <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem' }}>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                  <circle cx="12" cy="12" r="10"></circle>
+                                  <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                Submitted directly to server at: <strong>{submitTime}</strong>
+                              </span>
+                            </p>
+                            <p style={{ textAlign: 'center', margin: '0.5rem 0 0 0', fontSize: '0.8rem', color: '#a0aec0' }}>
+                              Bids are final and non-editable to ensure a fair auction process.
+                            </p>
+                          </div>
+                          {timeLeft <= 0 && (
+                            <div className="time-up-msg" style={{ marginTop: '1.5rem', width: '100%' }}>
+                              <h3>⌛ TIME IS UP</h3>
+                              <p>Bidding has closed for this player. Waiting for Admin reveal.</p>
+                            </div>
+                          )}
+                        </div>
+                      );
+                    } else if (timeLeft > 0) {
+                      return (
+                        <>
+                          <h3>Enter Your Bid (Confidential)</h3>
+                          <div className="bid-input-wrapper large-bid-input">
+                            <span className="currency" style={{fontSize: '1.5rem'}}>₹</span>
+                            <input 
+                              type="number" 
+                              step="0.01"
+                              placeholder="Price in Crore (e.g. 12.8)"
+                              value={myBid}
+                              onChange={(e) => setMyBid(e.target.value)}
+                            />
+                            <span className="lakhs-suffix" style={{fontSize: '1.2rem', marginLeft: '0.5rem', color: '#a0aec0'}}>Cr</span>
+                          </div>
+                          <button className="action-btn submit-bid-btn" onClick={handleSubmitBid}>Submit Bid</button>
+                        </>
+                      );
+                    } else {
+                      return (
+                        <div className="time-up-msg">
+                          <h3>⌛ TIME IS UP</h3>
+                          <p>Bidding has closed for this player. Waiting for Admin reveal.</p>
+                        </div>
+                      );
+                    }
+                  })()}
                 </div>
               )}
             </>
