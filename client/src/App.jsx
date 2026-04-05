@@ -167,7 +167,7 @@ function App() {
       await fetchAuctionRecords();
 
       // Subscribe to Real-Time Updates & Presence
-      const channel = supabase.channel(`auction-room-${Math.random().toString(36).substr(2, 5)}`, {
+      const channel = supabase.channel(`auction-room-global`, {
         config: {
           presence: {
             key: myPresenceId,
@@ -199,6 +199,25 @@ function App() {
               return newRecords;
             });
             setLastSynced(new Date());
+          }
+        })
+        .on('postgres_changes', { event: 'DELETE', schema: 'public', table: 'active_franchise_sessions' }, (payload) => {
+          console.log("Session deleted remotely", payload.old);
+          const deletedFranchiseId = payload.old?.franchise_id;
+          
+          const savedSession = localStorage.getItem('ipl_auction_session');
+          if (savedSession) {
+            try {
+              const { code, is_admin } = JSON.parse(savedSession);
+              // If the current user is not admin and their exact franchise_id was deleted
+              if (!is_admin && code === deletedFranchiseId) {
+                alert("Your session was terminated by the Administrator. Please login again.");
+                localStorage.removeItem('ipl_auction_session');
+                window.location.reload(); // Cleanly reset all state and force re-login
+              }
+            } catch (e) {
+              console.error("Error parsing session on remote delete", e);
+            }
           }
         })
         .on('presence', { event: 'sync' }, () => {

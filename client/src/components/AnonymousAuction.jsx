@@ -216,11 +216,21 @@ export default function AnonymousAuction({ players, auctionRecords, setAuctionRe
       return;
     }
 
-    await supabase.from('anonymous_bids').upsert({
+    const { error } = await supabase.from('anonymous_bids').insert({
       player_id: activePlayer.id,
       team_name: userTeam,
       amount: amountLakhs
     });
+
+    if (error) {
+      if (error.code === '23505') { // Postgres unique violation error code
+        alert("Bid already submitted. You cannot modify it.");
+      } else {
+        alert("Error submitting bid: " + error.message);
+      }
+      return;
+    }
+
     alert("Bid Submitted Successfully!");
   };
 
@@ -344,6 +354,7 @@ export default function AnonymousAuction({ players, auctionRecords, setAuctionRe
                       <tr style={{textAlign: 'left', borderBottom: '1px solid rgba(255,255,255,0.1)'}}>
                         <th style={{padding: '0.5rem'}}>Team</th>
                         <th style={{padding: '0.5rem'}}>Bid Amount</th>
+                        <th style={{padding: '0.5rem'}}>Submission Time</th>
                         <th style={{padding: '0.5rem'}}>Action</th>
                       </tr>
                     </thead>
@@ -352,6 +363,26 @@ export default function AnonymousAuction({ players, auctionRecords, setAuctionRe
                         <tr key={b.team_name}>
                           <td style={{padding: '0.5rem'}}>{b.team_name}</td>
                           <td style={{padding: '0.5rem'}}>₹{b.amount >= 100 ? (b.amount / 100).toFixed(2) + ' Cr' : b.amount + ' L'}</td>
+                          <td style={{padding: '0.5rem', fontSize: '0.85rem', color: '#a0aec0'}}>
+                            {(() => {
+                              if (!b.created_at || !endTime) return "N/A";
+                              const startMs = endTime.getTime() - (3 * 60 * 1000);
+                              const bidMs = new Date(b.created_at).getTime();
+                              let relSecs = Math.floor((bidMs - startMs) / 1000);
+                              if (relSecs < 0) relSecs = 0;
+                              if (relSecs > 180) relSecs = 180;
+                              const m = Math.floor(relSecs / 60);
+                              const s = relSecs % 60;
+                              const relStr = `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+                              const absStr = new Date(b.created_at).toISOString();
+                              return (
+                                <div>
+                                  <div style={{color: '#e2e8f0'}}>{relStr} / 03:00</div>
+                                  <div style={{fontSize: '0.75rem'}}>{absStr}</div>
+                                </div>
+                              );
+                            })()}
+                          </td>
                           <td style={{padding: '0.5rem'}}>
                             {bidsRevealed && (
                               <button className="sell-btn-anon" style={{padding: '4px 12px', fontSize: '0.8rem'}} onClick={() => handleConfirmWinner(b.team_name, b.amount)}>Confirm Win</button>

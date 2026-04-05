@@ -161,6 +161,25 @@ export default function AuctionAdminPanel({ players, auctionRecords, setAuctionR
     XLSX.writeFile(wb, "ipl_auction_results_manual.xlsx");
   };
 
+  const handleLogoutAllTeams = async () => {
+    if (!window.confirm("⚠️ DANGER: This will forcefully logout all active team sessions.\n\nThey will be immediately disconnected and required to login again. Proceed?")) {
+      return;
+    }
+
+    console.log("Forcefully logging out all teams...");
+    
+    if (import.meta.env.VITE_SUPABASE_URL && import.meta.env.VITE_SUPABASE_URL !== 'YOUR_SUPABASE_URL_HERE') {
+      // In Supabase we need some filter for delete, so we match any franchise_id that is not 'none'
+      const { error } = await supabase.from('active_franchise_sessions').delete().neq('franchise_id', 'none');
+      if (error) {
+        console.error("Supabase Logout All error:", error);
+        alert("⚠️ DATABASE UPDATE FAILED: Failed to clear active sessions.");
+      } else {
+        alert("✅ All team sessions have been successfully cleared.");
+      }
+    }
+  };
+
   return (
     <div className="admin-panel-container">
       <div className="admin-form-card">
@@ -304,7 +323,16 @@ export default function AuctionAdminPanel({ players, auctionRecords, setAuctionR
         </div>
       </div>
 
-      <div style={{ marginTop: '2rem', textAlign: 'center' }}>
+      <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center' }}>
+        <button 
+          type="button" 
+          className="reset-all-btn" 
+          onClick={handleLogoutAllTeams}
+          style={{ backgroundColor: '#ed8936', borderColor: '#ed8936', color: '#fff' }}
+        >
+          🔒 Force Logout All Teams (Require Re-login)
+        </button>
+
         <button 
           type="button" 
           className="reset-all-btn" 
@@ -312,7 +340,7 @@ export default function AuctionAdminPanel({ players, auctionRecords, setAuctionR
         >
           ⚠️ Reset All Players to Unsold/Available
         </button>
-      </div>
+      </div>    
     </div>
   );
 }

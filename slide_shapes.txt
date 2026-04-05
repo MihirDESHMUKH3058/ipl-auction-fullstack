@@ -1,0 +1,150 @@
+Total Shapes on Slide 1: 51
+Shape 0 TEXT:
+
+---
+Shape 1 TEXT:
+
+---
+Shape 2 TEXT:
+
+---
+Shape 3 TEXT:
+
+---
+Shape 4 TEXT:
+#1
+---
+Shape 5 TEXT:
+
+---
+Shape 6 TEXT:
+MI
+---
+Shape 7 TEXT:
+
+---
+Shape 8 TEXT:
+  INDIAN
+---
+Shape 9 TEXT:
+
+---
+Shape 10 TEXT:
+🏏  BATSMAN
+---
+Shape 11 TEXT:
+INDIA
+---
+Shape 12 TEXT:
+★★★★★
+---
+Shape 13 TEXT:
+Rating: 10/10
+---
+Shape 14 TEXT:
+
+---
+Shape 15 TEXT:
+✓  AVAILABLE
+---
+Shape 16 TEXT:
+
+---
+Shape 17 TEXT:
+Rohit Sharma
+---
+Shape 18 TEXT:
+
+---
+Shape 19 TEXT:
+
+---
+Shape 20 TEXT:
+
+---
+Shape 21 TEXT:
+💰
+---
+Shape 22 TEXT:
+BASE PRICE
+---
+Shape 23 TEXT:
+₹2,00,00,000
+---
+Shape 24 TEXT:
+Auction Starting Bid
+---
+Shape 25 TEXT:
+
+---
+Shape 26 TEXT:
+
+---
+Shape 27 TEXT:
+⭐
+---
+Shape 28 TEXT:
+RATING
+---
+Shape 29 TEXT:
+10/10
+---
+Shape 30 TEXT:
+Player Skill Rating
+---
+Shape 31 TEXT:
+
+---
+Shape 32 TEXT:
+
+---
+Shape 33 TEXT:
+🏏
+---
+Shape 34 TEXT:
+IPL TEAM
+---
+Shape 35 TEXT:
+MI
+---
+Shape 36 TEXT:
+IPL Franchise
+---
+Shape 37 TEXT:
+
+---
+Shape 38 TEXT:
+
+---
+Shape 39 TEXT:
+🇮🇳
+---
+Shape 40 TEXT:
+ORIGIN
+---
+Shape 41 TEXT:
+INDIA
+---
+Shape 42 TEXT:
+India
+---
+Shape 43 TEXT:
+
+---
+Shape 44 TEXT:
+PLAYER #1 OF 195
+---
+Shape 45 TEXT:
+
+---
+Shape 46 TEXT:
+
+---
+Shape 47 TEXT:
+IPL 2026 COLLEGE AUCTION
+---
+Shape 48 TEXT:
+1% Complete
+---
+Shape 49: PICTURE (13) / Picture 52
+Shape 50: PICTURE (13) / Picture 53
